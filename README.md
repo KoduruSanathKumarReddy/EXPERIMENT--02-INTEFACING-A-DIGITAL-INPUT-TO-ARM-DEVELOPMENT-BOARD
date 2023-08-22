@@ -51,13 +51,59 @@ The full form of an ARM is an advanced reduced instruction set computer (RISC) m
 
 
 ## STM 32 CUBE PROGRAM :
-
+~~~
+Developed by : Koduru Sanath Kumar Reddy
+Registration number: 212221240024
+~~~
+## Program
+~~~
+#include "main.h"
+#include "stdbool.h"
+bool button_status;
+void push_button();
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+int main(void){
+    HAL_Init();
+    SystemClock_Config();
+    MX_GPIO_Init();
+    while (1){
+	       pushbutton();
+    }
+}
+void pushbutton()
+{
+	button_status = HAL_GPIO_ReadPin(GPIOC , GPIO_PIN_13);
+	if(button_status == 0){
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5 , GPIO_PIN_SET);
+	HAL_Delay(1000);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5 , GPIO_PIN_RESET);
+	HAL_Delay(1000);
+	}
+	else{
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5 , GPIO_PIN_RESET);
+	}
+}
+~~~
 
 
 ## Output  :
+ ## When NOT Clicked:
+
  
+ ## When Clicked:
+<img width="526" alt="Screenshot 2023-08-22 at 10 34 54 PM" src="https://github.com/KoduruSanathKumarReddy/EXPERIMENT--02-INTEFACING-A-DIGITAL-INPUT-TO-ARM-DEVELOPMENT-BOARD/assets/69503902/a5a883bc-7a50-4213-8a7f-29502694f368">
+
  
+ ## Case 1: ON State
+
+<img width="541" alt="Screenshot 2023-08-22 at 10 33 04 PM" src="https://github.com/KoduruSanathKumarReddy/EXPERIMENT--02-INTEFACING-A-DIGITAL-INPUT-TO-ARM-DEVELOPMENT-BOARD/assets/69503902/21ddc583-ae54-4902-b77a-af052768ade1">
+
+
+ ## Case 2: OFF State
  
+ <img width="541" alt="Screenshot 2023-08-22 at 10 30 59 PM" src="https://github.com/KoduruSanathKumarReddy/EXPERIMENT--02-INTEFACING-A-DIGITAL-INPUT-TO-ARM-DEVELOPMENT-BOARD/assets/69503902/315d1547-be0e-4d7e-932c-268d388d70f4">
+
  
 ## Result :
 Interfacing a digital Input (Pushbutton ) with ARM microcontroller based IOT development is executed and the results are verified.
