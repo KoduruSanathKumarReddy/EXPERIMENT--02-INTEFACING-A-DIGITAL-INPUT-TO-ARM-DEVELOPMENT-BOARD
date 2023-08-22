@@ -91,9 +91,9 @@ void pushbutton()
  ## When NOT Clicked:
 
  
- ## When Clicked:
+ 
 <img width="526" alt="Screenshot 2023-08-22 at 10 34 54 PM" src="https://github.com/KoduruSanathKumarReddy/EXPERIMENT--02-INTEFACING-A-DIGITAL-INPUT-TO-ARM-DEVELOPMENT-BOARD/assets/69503902/a5a883bc-7a50-4213-8a7f-29502694f368">
-
+## When Clicked:
  
  ## Case 1: ON State
 
